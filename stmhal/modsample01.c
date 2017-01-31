@@ -36,11 +36,20 @@ STATIC mp_obj_t func_001(void)
 }
 MP_DEFINE_CONST_FUN_OBJ_0(func_001_obj, func_001);
 
+STATIC mp_obj_t func_002(mp_obj_t ui32_value)
+{
+	uint32_t ui32_data01 = mp_obj_get_int(ui32_value);
+	ui32_data01 = ui32_data01 * 2;
+	return MP_OBJ_NEW_SMALL_INT(ui32_data01);
+}
+STATIC MP_DEFINE_CONST_FUN_OBJ_1(func_002_obj, func_002);
+
 
 
 STATIC const mp_map_elem_t sample01_module_globals_table[] = {
     { MP_OBJ_NEW_QSTR(MP_QSTR___name__),            MP_OBJ_NEW_QSTR(MP_QSTR_sample01) },
     { MP_OBJ_NEW_QSTR(MP_QSTR_func001),                (mp_obj_t)&func_001_obj },
+    { MP_OBJ_NEW_QSTR(MP_QSTR_func002),                (mp_obj_t)&func_002_obj },
 };
 
 
